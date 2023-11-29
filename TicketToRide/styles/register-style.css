@@ -1,3 +1,4 @@
+/* Resetting default margin, padding, and box-sizing for all elements */
 * {
   margin: 0;
   padding: 0;
@@ -5,16 +6,19 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Styling the body */
 body {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background: linear-gradient(135deg, #191919, #ff785a);
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #191919, #ff785a);
+    width: 100%;
+    align-content: center;
+    flex-direction: column;
 }
 
+/* Styling the main container */
 .container {
   max-width: 700px;
   max-height: 400px;
@@ -25,8 +29,16 @@ body {
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   background-color: #191919;
+  margin-top: 12%;
+  margin-bottom: 10%;
 }
 
+/* Styling the footer */
+footer{
+  width: 100%;
+}
+
+/* Styling the title inside the container */
 .container .title {
   font-size: 25px;
   font-weight: 500;
@@ -34,6 +46,7 @@ body {
   color: #ff785a;
 }
 
+/* Adding a line before the title */
 .container .title::before {
   content: "";
   position: absolute;
@@ -45,6 +58,7 @@ body {
   background: linear-gradient(135deg, #191919, #ff785a);
 }
 
+/* Styling the user details section in the form */
 .content form .user-details {
   display: flex;
   flex-wrap: wrap;
@@ -53,11 +67,13 @@ body {
   color: #ff785a;
 }
 
+/* Styling the input boxes in the form */
 form .user-details .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
 
+/* Styling the input fields */
 .user-details .input-box input {
   height: 45px;
   width: 100%;
@@ -70,10 +86,12 @@ form .user-details .input-box {
   transition: all 0.3s ease;
 }
 
+/* Styling the focused state of the input fields */
 .user-details .input-box input:focus {
   border-color: #ff785a;
 }
 
+/* Styling the form button */
 form .button {
   display: flexbox;
   margin-top: 40px;
@@ -83,6 +101,7 @@ form .button {
   width: 90%;
 }
 
+/* Styling the button inside the form */
 form .button input {
   height: 100%;
   width: 90%;
@@ -97,10 +116,12 @@ form .button input {
   background-color: #ff785a;
 }
 
+/* Styling the button hover state */
 form .button input:hover {
   background-color: #f74017;
 }
 
+/* Media query for smaller screens */
 @media (max-width: 584px) {
   .container {
     max-width: 100%;
@@ -124,11 +145,13 @@ form .button input:hover {
     overflow-y: scroll;
   }
 
+  /* Styling the scrollbar for user details on smaller screens */
   .user-details::-webkit-scrollbar {
     width: 5px;
   }
 }
 
+/* Styling hyperlinks */
 a {
   font-size: 19px;
   font-weight: bold;
@@ -136,6 +159,3 @@ a {
   text-decoration: none;
 }
 
-.back-link a:hover {
-  color: #ffff;
-}

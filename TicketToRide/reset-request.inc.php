@@ -15,7 +15,7 @@ $mail->isSMTP();
 $mail->Host       = 'smtp.gmail.com';
 $mail->SMTPAuth   = true;
 $mail->Username   = 'tickettoridetec@gmail.com'; // Your Gmail address
-$mail->Password   = 'sdmz vwzn nxkt mato'; // Your Gmail password
+$mail->Password   = 'sdmz vwzn nxkt mato'; // Gmail app-password
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port       = 587; // Use 465 for SSL
 
@@ -28,7 +28,7 @@ if (isset($_POST["reset-request-submit"])) {
     $token = random_bytes(32);
 
     // Create the URL for password reset
-    $url = "http://localhost/tickettoride-web/tickettoride/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
+    $url = "http://localhost/tickettoride-web/ticket-to-ride/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
 
     // Set the expiration time for the reset link (1800 seconds = 30 minutes)
     $expires = date("U") + 1800;

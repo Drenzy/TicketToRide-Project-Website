@@ -1,35 +1,39 @@
 <?php
-// Starting session to manage user sessions.
+//starting session
 session_start();
-// Requiring the connection file for database connectivity.
+// require the connection file
 require('connection.php');
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+  echo "<script>alert('You are not logged in');</script>";
+  // Redirect the user to the home page using JavaScript
+  echo "<script>window.location.href = 'index.php';</script>";
+  // Make sure to exit or die after the redirect to prevent further execution of the script
+  exit();
+}
 ?>
+</style>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-  <!-- Setting character set and viewport for better rendering on various devices -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Linking external stylesheet for styling -->
   <link rel="stylesheet" href="styles/frontpage-style.css">
-  <!-- Setting the title of the webpage -->
   <title>Home</title>
 </head>
 
 <body>
 
   <?php
-  // Including the navbar.php script for consistent navigation across pages.
+  // Include the navbar.php script
   require('navbar.php');
   ?>
-  <!-- Banner section of the webpage -->
+
   <div class="banner">
+
   </div>
 
-  <!-- Information section with a brief overview of the application -->
   <div class="info">
     <h1 class="MT">Ticket To Ride</h1>
     <p class="MP">From the craggy hillsides of Edinburgh to the sunlit docks of Constantinople, <br> from the dusty
@@ -41,7 +45,7 @@ require('connection.php');
       cities of turn-of-the-century Europe.</p>
   </div>
 
-  <!-- About section providing detailed information about Ticket To Ride -->
+
   <div class="AG">
     <h1 class="AT">About Ticket To Ride</h1>
     <p class="AP">I need A lot of text XDDD <br>
@@ -72,13 +76,9 @@ require('connection.php');
       distinctio molestias cum vitae neque unde corrupti iusto placeat atque. Ratione libero autem accusamus>
     </p>
   </div>
-
-  <!-- Button linking to an external resource for learning more about Ticket To Ride -->
   <div class="button">
     <a href="https://www.boardgamecapital.com/ticket-to-ride-rules.htm" class="AB">Learn more</a>
   </div>
-
-  <!-- Game Rules section with an embedded YouTube video and additional information -->
   <div class="GR">
     <h1 class="RB">Rules</h1>
     <iframe class="RV" width="1220" height="980" src="https://www.youtube.com/embed/yPWqKkMKz3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -86,18 +86,12 @@ require('connection.php');
       for every
       one such as
       new players, experienced players and returning players</p>
-
-    <!-- Link to download Ticket To Ride Official Rules -->
-    <a href="https://www.boardgamecapital.com/ticket-to-ride-rules.htm" class="DRB">Download Ticket To Ride Official
-      Rules</a>
+    <a href="https://www.boardgamecapital.com/ticket-to-ride-rules.htm" class="DRB">Download Ticket To Ride Official Rules</a>
   </div>
-
   <?php
-  // Including the footer.php script for consistent footer across pages.
+  // Include the footer.php script
   require('footer.php');
   ?>
-
-
 </body>
 
 </html>
